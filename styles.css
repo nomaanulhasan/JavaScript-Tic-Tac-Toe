@@ -5,8 +5,8 @@
 }
 
 :root {
-	--cell-size: 100px;
 	--mark-size: calc(var(--cell-size) * .9);
+	--cell-size: 100px;
 }
 
 body {
@@ -18,25 +18,25 @@ body {
 }
 
 .board {
-	width: 100vw;
-	height: 100vh;
-	display: grid;
+	grid-template-columns: repeat(3, auto);
 	justify-content: center;
 	align-content: center;
 	justify-items: center;
 	align-items: center;
-	grid-template-columns: repeat(3, auto)
+	height: 100vh;
+	display: grid;
+	width: 100vw;
 }
 
 .cell {
-	width: var(--cell-size);
-	height: var(--cell-size);
 	border: 4px solid white;
-	display: flex;
+	height: var(--cell-size);
+	width: var(--cell-size);
 	justify-content: center;
 	align-items: center;
 	position: relative;
 	cursor: pointer;
+	display: flex;
 }
 
 .cell:first-child,
@@ -71,7 +71,7 @@ body {
 
 .cell.circle::before,
 .board.circle .cell:not(.x):not(.circle):hover::before {
-  height: calc(var(--mark-size) * .85);
+	height: calc(var(--mark-size) * .85);
 	width: calc(var(--mark-size) * .85);
 	position: absolute;
 	border-radius: 50%;
@@ -95,10 +95,10 @@ body {
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after {
-	content: '';
-	position: absolute;
 	width: calc(var(--mark-size) * .15);
 	height: var(--mark-size);
+	position: absolute;
+	content: '';
 }
 
 .cell.x::before,
@@ -112,34 +112,63 @@ body {
 }
 
 .winning-message {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	background-color: rgba(0, 0, 0, .9);
 	justify-content: center;
-	align-items: center;
-	color: white;
-	font-size: 5rem;
 	flex-direction: column;
+	align-items: center;
+	font-size: 5rem;
+	position: fixed;
+	color: white;
+	display: none;
+	inset: 0;
 }
 
 .winning-message button {
-	font-size: 3rem;
 	background-color: white;
 	border: 1px solid black;
 	padding: .25em .5em;
+	font-size: 3rem;
 	cursor: pointer;
 }
 
 .winning-message button:hover {
 	background-color: black;
-	color: white;
 	border-color: white;
+	color: white;
 }
 
 .winning-message.show {
 	display: flex;
+}
+
+.players {
+	justify-content: center;
+	top: calc(50vh - 222px);
+	align-items: center;
+	position: absolute;
+	display: flex;
+	gap: 1rem;
+	right: 0;
+	left: 0;
+}
+
+.player {
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	color: white;
+	display: flex;
+	gap: 0.25rem;
+}
+
+.player input {
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.25rem;
+	max-width: 9rem;
+	height: 2rem;
+	border: none;
+}
+
+.player input:focus {
+	outline: none;
 }

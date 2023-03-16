@@ -2,19 +2,31 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="This is a simple Tic-Tac-Toe game developed using HTML, CSS and vanilla JavaScript.">
-	<title>Tic-Tac-Toe - Vanilla JavaScript</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="This is a simple Tic-Tac-Toe game developed using HTML, CSS and vanilla JavaScript.">
+  <title>Tic-Tac-Toe - Vanilla JavaScript</title>
 
-	<link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 
-	<script src="./script.js" type="text/javascript" defer></script>
+  <script src="./script.js" type="text/javascript" defer></script>
 </head>
 
 <body>
-	<div class="board" id="board">
+  <div class="players">
+    <div class="player">
+      Player 1
+      <input type="text" id="playerOne" maxlength="16" value="X" />
+    </div>
+    <div class="player">
+      Player 2
+      <input type="text" id="playerTwo" maxlength="16" value="O" />
+    </div>
+  </div>
+
+  <div class="board" id="board">
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
@@ -25,11 +37,10 @@
     <div class="cell" data-cell></div>
     <div class="cell" data-cell></div>
   </div>
-	<div class="winning-message" id="winningMessage">
+  <div class="winning-message" id="winningMessage">
     <div data-winning-message-text></div>
     <button id="restartButton">Restart</button>
   </div>
 </body>
 
 </html>
-

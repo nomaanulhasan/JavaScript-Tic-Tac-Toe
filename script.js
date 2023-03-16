@@ -31,6 +31,7 @@ function startGame() {
     cell.removeEventListener('click', handleClick);
     cell.addEventListener('click', handleClick, { once: true });
   });
+
   setBoardHoverClass();
   winningMessageElement.classList.remove('show');
 }
@@ -39,6 +40,7 @@ function handleClick(e) {
   const cell = e.target;
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS;
   placeMark(cell, currentClass);
+
   if (checkWin(currentClass)) {
     endGame(false);
   } else if (isDraw()) {
@@ -53,8 +55,13 @@ function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = 'Draw!';
   } else {
-    winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`;
+    const PLAYER_ONE = document.getElementById('playerOne').value || "X's";
+    const PLAYER_TWO = document.getElementById('playerTwo').value || "O's";
+    winningMessageTextElement.innerText = `${
+      circleTurn ? PLAYER_TWO : PLAYER_ONE
+    } Wins!`;
   }
+
   winningMessageElement.classList.add('show');
 }
 
