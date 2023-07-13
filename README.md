@@ -43,6 +43,6 @@ This project is licensed under the [MIT License](/LICENSE).
 
 ## Acknowledgements
 
-The Tic-Tac-Toe application is inspired by youtube tutorials by WebDevSimplified. I am very thankful to WebDevSimplified for the following resource:
+The Tic-Tac-Toe application is inspired by youtube tutorials by [WebDevSimplified](https://www.youtube.com/@WebDevSimplified). I am very thankful to WebDevSimplified for the following resource:
 
 - [WebDevSimplified: JavaScript-Tic-Tac-Toe](https://github.com/WebDevSimplified/JavaScript-Tic-Tac-Toe)
